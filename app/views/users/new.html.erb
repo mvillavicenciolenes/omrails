@@ -1,0 +1,113 @@
+<!-- app/views/users/new.html.erb -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #error_explanation {
+            color: red;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #f8d7da;
+        }
+        #error_explanation h2 {
+            margin-top: 0;
+        }
+        .field {
+            margin-bottom: 20px;
+        }
+        .field label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .field input[type="text"],
+        .field input[type="email"],
+        .field input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .actions input[type="submit"] {
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .actions input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+        <%= form_with(model: @user, local: true) do |form| %>
+            <% if @user.errors.any? %>
+                <div id="error_explanation">
+                    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+                    <ul>
+                        <% @user.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+
+            <div class="field">
+                <%= form.label :username %>
+                <%= form.text_field :username %>
+            </div>
+
+            <div class="field">
+                <%= form.label :email %>
+                <%= form.email_field :email %>
+            </div>
+
+            <div class="field">
+                <%= form.label :password %>
+                <%= form.password_field :password %>
+            </div>
+
+            <div class="field">
+                <%= form.label :password_confirmation %>
+                <%= form.password_field :password_confirmation %>
+            </div>
+
+            <div class="actions">
+                <%= form.submit 'Sign Up' %>
+            </div>
+        <% end %>
+    </div>
+</body>
+</html>

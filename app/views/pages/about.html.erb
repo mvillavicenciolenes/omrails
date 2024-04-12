@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            padding-top: 60px; /* Adjust this value based on your header height */
+            background-color: #f4f4f4;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 20px;
+            box-sizing: border-box; /* Ensures padding is included in width */
+            z-index: 1000; /* Keeps the header above other content */
+        }
+        section {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        /* Button styling */
+        .button {
+            padding: 8px 15px;
+            background-color: #007BFF; /* Bootstrap primary blue */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .button:hover {
+            background-color: #0056b3;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <%= link_to "Home", root_path %>
+
+        <h1>About Us!</h1>
+    </header>
+    <section>
+        <p>We're working on our one month rails project, which is an initiative to teach new developers the basics of Ruby on Rails in a condensed format. The program aims to empower participants by building a solid foundation in one of the most popular web development frameworks available today.</p>
+        <p>Our team consists of experienced developers and educators who are passionate about coding and sharing their knowledge. We have designed the curriculum to be hands-on, with real-world projects that will equip our students not only with technical skills but also with problem-solving capabilities.</p>
+        <p>The project began as a small group in a local community center and has grown to include online participants from around the world. We are committed to creating an inclusive and supportive environment where everyone, regardless of their background, can learn and grow together.</p>
+        <p>If you are interested in joining our next session or want more information, please don't hesitate to reach out to us.</p>
+    </section>
+</body>
+</html>
